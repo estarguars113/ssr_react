@@ -3,14 +3,13 @@ const path = require('path');
 module.exports = {
   //inform that the bundle generated it's for node and not browser
   target: 'node',
-
   //root file
   entry: './src/index.js',
 
   //output
   output: {
     filename : 'bundle.js',
-    path: path.resolve(__dirname,'dist')
+    path: path.resolve(__dirname,'build')
   },
 
   //specify webpack dependency
@@ -18,7 +17,7 @@ module.exports = {
     rules: [
       {
         test: /\.js?$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         exclude: /node_modules/,
         options: {
           presets: [
